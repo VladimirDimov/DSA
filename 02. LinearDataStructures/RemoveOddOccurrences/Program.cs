@@ -8,11 +8,12 @@ namespace RemoveOddOccurrences
     {
         static void Main()
         {
-            var sequence = new int[] { 1, 1, 2, 4, 4, 4, 5, 1, 3, 3, 1, 1, 1 };
+            var sequence = new int[] { 4,2,2,5,2,3,2,3,1,5,2 };
 
             var result = RemoveOddTimesOccurrences(sequence);
 
-            Console.WriteLine(string.Join(",", result));
+            Console.WriteLine(" Input: => {0}", string.Join(",", sequence));
+            Console.WriteLine("Output: => {0}", string.Join(",", result));
         }
 
         private static int[] RemoveOddTimesOccurrences(int[] sequence)
