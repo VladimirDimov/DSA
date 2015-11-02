@@ -13,6 +13,9 @@
             var numberOfNodes = int.Parse(Console.ReadLine());
             var nodes = new Dictionary<int, TreeNode<int>>();
 
+            // We put all nodes in a dictionary with a key - the value of the node.
+            // Each time we add new node we check if we have it in the dictionary.
+            // We find the root as we cycle through the diction and find the node with no parent.
             for (int i = 0; i < numberOfNodes - 1; i++)
             {
                 var currentNodes = Console.ReadLine().Split(' ').Select(x => int.Parse(x)).ToArray<int>();
@@ -44,10 +47,12 @@
                 currentParent.AddChild(currentChild);
             }
 
+            // The root
             var root = GetRoot(nodes);
 
             Console.WriteLine("The root has value: {0}", root.Value);
 
+            // The tree with the root
             var tree = CreateTree(root);
 
             var leafs = new List<int>();
