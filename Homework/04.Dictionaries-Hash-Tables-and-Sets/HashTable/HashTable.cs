@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 namespace HashTable
 {
@@ -31,12 +32,21 @@ namespace HashTable
             }
         }
 
+        public int Capacity
+        {
+            get
+            {
+                return this.currentCapacity;
+            }
+        }
+
         public T this[K key]
         {
             get
             {
                 return Find(key);
             }
+
             set
             {
                 if (this.ContainsKey(key))
@@ -117,6 +127,7 @@ namespace HashTable
                         throw new Exception("Key is already in a HashTable:");
                     }
                 }
+
                 hashTable[hashCode].AddLast(new KeyValuePair<K, T>(key, value));
                 count++;
             }
@@ -134,6 +145,7 @@ namespace HashTable
                     }
                 }
             }
+
             throw new Exception("Key not exist.");
         }
 
@@ -149,17 +161,21 @@ namespace HashTable
                     }
                 }
             }
+
             return false;
         }
 
         public void Remove(K key)
         {
             int hashCode = GetHash(key);
+
             if (hashTable[hashCode] == null)
             {
                 return;
             }
+
             KeyValuePair<K, T> toRemovePair = new KeyValuePair<K, T>();
+
             foreach (KeyValuePair<K, T> item in hashTable[hashCode])
             {
                 if (item.Key.Equals(key))
@@ -167,7 +183,9 @@ namespace HashTable
                     toRemovePair = item;
                 }
             }
+
             hashTable[hashCode].Remove(toRemovePair);
+
             count--;
         }
 
@@ -186,6 +204,7 @@ namespace HashTable
             hashTable = newHashTable;
             count = 0;
             currentLoad = 0;
+
             foreach (LinkedList<KeyValuePair<K, T>> item in oldHashTable)
             {
                 if (item != null)
@@ -223,7 +242,7 @@ namespace HashTable
             }
         }
 
-        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+        IEnumerator IEnumerable.GetEnumerator()
         {
             return ((IEnumerable<KeyValuePair<K, T>>)this).GetEnumerator();
         }

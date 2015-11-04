@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace HashTable.Tests
 {
     [TestFixture]
-    public class UnitTest1
+    public class AddTests
     {
         [Test]
         public void ShouldIncreaseCounterWithEachAddedElement()

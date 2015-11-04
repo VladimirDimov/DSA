@@ -24,8 +24,6 @@ namespace HashedSet
             }
         }
 
-        #region Methods
-
         public void Add(T item)
         {
             hashTable.Add(item, item);
@@ -70,10 +68,6 @@ namespace HashedSet
             this.hashTable = newtable;
         }
 
-        #endregion
-
-        #region IEnumerable
-
         public IEnumerator<T> GetEnumerator()
         {
             return this.hashTable.Keys.GetEnumerator();
@@ -83,7 +77,5 @@ namespace HashedSet
         {
             return hashTable.Keys.GetEnumerator();
         }
-
-        #endregion
     }
 }

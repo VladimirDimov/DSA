@@ -53,9 +53,13 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="ClearTests.cs" />
+    <Compile Include="ResizeTests.cs" />
+    <Compile Include="RemoveTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitTest1.cs" />
-    <Compile Include="UnitTest2.cs" />
+    <Compile Include="AddTests.cs" />
+    <Compile Include="FindTests.cs" />
+    <Compile Include="ContainsKeyTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
