@@ -19,6 +19,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04.HashTable", "04.HashTabl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashTable.Tests", "HashTable.Tests\HashTable.Tests.csproj", "{CB44B507-A81B-4774-ADE8-6826A09DF489}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05.HashedSet", "05.HashedSet", "{4FB688F2-2E30-4B1C-A09D-297DA61701AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashedSet.Tests", "HashedSet.Tests\HashedSet.Tests.csproj", "{24699929-C36E-4DE8-9DE7-2752A0437236}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,12 +57,18 @@ Global
 		{CB44B507-A81B-4774-ADE8-6826A09DF489}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB44B507-A81B-4774-ADE8-6826A09DF489}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB44B507-A81B-4774-ADE8-6826A09DF489}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24699929-C36E-4DE8-9DE7-2752A0437236}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24699929-C36E-4DE8-9DE7-2752A0437236}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24699929-C36E-4DE8-9DE7-2752A0437236}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24699929-C36E-4DE8-9DE7-2752A0437236}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7561E457-683C-42EB-9CDD-C5683727A802} = {339A48E2-770C-4117-9D23-D7135FFDC9BB}
+		{0DC85C9D-CC9F-43F2-808C-0BF613934BB3} = {4FB688F2-2E30-4B1C-A09D-297DA61701AD}
 		{CB44B507-A81B-4774-ADE8-6826A09DF489} = {339A48E2-770C-4117-9D23-D7135FFDC9BB}
+		{24699929-C36E-4DE8-9DE7-2752A0437236} = {4FB688F2-2E30-4B1C-A09D-297DA61701AD}
 	EndGlobalSection
 EndGlobal

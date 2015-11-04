@@ -1,13 +1,10 @@
-﻿using HashTable;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HashedSet
+﻿namespace HashedSet
 {
-    class HashedSet<T> : IEnumerable<T>
+    using HashTable;
+    using System.Collections;
+    using System.Collections.Generic;
+
+    public class HashedSet<T> : IEnumerable<T>
     {
         HashTable<T, T> hashTable;
 
@@ -58,6 +55,7 @@ namespace HashedSet
         public void Intersect(HashedSet<T> hashedSet)
         {
             HashTable<T, T> newtable = new HashTable<T, T>();
+            
             foreach (var item in hashedSet)
             {
                 if (this.Find(item))
@@ -65,6 +63,7 @@ namespace HashedSet
                     newtable.Add(item, item);
                 }
             }
+
             this.hashTable = newtable;
         }
 
@@ -73,7 +72,7 @@ namespace HashedSet
             return this.hashTable.Keys.GetEnumerator();
         }
 
-        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+        IEnumerator IEnumerable.GetEnumerator()
         {
             return hashTable.Keys.GetEnumerator();
         }

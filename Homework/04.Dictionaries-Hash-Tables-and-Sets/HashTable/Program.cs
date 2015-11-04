@@ -10,14 +10,11 @@ namespace HashTable
     {
         static void Main()
         {
-            //var test = new HashTable<int, string>();
-            //test.Add(1, "a");
-            //test.Add(2, "b");
-            //test.Add(1, "c");
-            //test.Add(2, "d");
-
-            var a = "asdasdasd";
-            var b = a.GetHashCode();
+            var test = new HashTable<int, string>();
+            test.Add(1, "a");
+            test.Add(2, "b");
+            test.Add(1, "c");
+            test.Add(2, "d");
         }
     }
 }
