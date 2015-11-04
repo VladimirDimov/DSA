@@ -5,7 +5,7 @@ namespace ConsoleApplication1
     using System;
     using System.IO;
 
-    class Program
+    class Startup
     {
         static void Main()
         {
@@ -13,7 +13,7 @@ namespace ConsoleApplication1
             PrintAllExeFiles(rootPath);
         }
 
-        private static void PrintAllExeFiles(string rootPath, int indentation = 0)
+        private static void PrintAllExeFiles(string rootPath)
         {
             var subFolders = Directory.GetDirectories(rootPath);
             var containedFiles = Directory.GetFiles(rootPath);
@@ -26,9 +26,16 @@ namespace ConsoleApplication1
                 }
             }
 
-            foreach (var folder in subFolders)
+            try
             {
-                PrintAllExeFiles(folder, indentation + 3);
+                foreach (var folder in subFolders)
+                {
+                    PrintAllExeFiles(folder);
+                }
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("[Forbidded directory]");
             }
         }
     }

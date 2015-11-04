@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="File.cs" />
     <Compile Include="Folder.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

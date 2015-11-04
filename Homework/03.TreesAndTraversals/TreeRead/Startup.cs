@@ -4,12 +4,14 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    class Program
+    class Startup
     {
         private static int longestPath;
 
         static void Main()
         {
+            Console.SetIn(new System.IO.StreamReader("../../input/1.txt"));
+            
             var numberOfNodes = int.Parse(Console.ReadLine());
             var nodes = new Dictionary<int, TreeNode<int>>();
 
