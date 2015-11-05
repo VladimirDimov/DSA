@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{39729F3A-B27E-4E9C-B964-8DA9895AE40B}</ProjectGuid>
+    <ProjectGuid>{18F98017-D95E-41A3-A838-C11EDFB6786E}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Permutations</RootNamespace>
-    <AssemblyName>Permutations</AssemblyName>
+    <RootNamespace>CombinationsWithDuplicates</RootNamespace>
+    <AssemblyName>CombinationsWithDuplicates</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -46,6 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Services\00.Services.csproj">
+      <Project>{86610cd4-c8a4-4424-91c0-9c0ecb9cdfca}</Project>
+      <Name>00.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
