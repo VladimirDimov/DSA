@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.AllPossibleCombinations", "AllPossibleCombinations\01.AllPossibleCombinations.csproj", "{2393B095-8BB2-45A4-8E4C-3AB902925B36}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.CombinationsWithDuplicates", "CombinationsWithDuplicates\02.CombinationsWithDuplicates.csproj", "{18F98017-D95E-41A3-A838-C11EDFB6786E}"
@@ -16,6 +14,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00.Services", "Services\00.Services.csproj", "{86610CD4-C8A4-4424-91C0-9C0ECB9CDFCA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06.OrderedSubsetsWithoutRepetitions", "OrderedSubsetsWithoutRepetitions\06.OrderedSubsetsWithoutRepetitions.csproj", "{DF3F025B-5E77-474B-A311-823A7FEB303C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07.AllPaths", "AllPaths\07.AllPaths.csproj", "{581AED10-4A96-4A56-9DF8-8D06DA8D9ADF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08.PathExists", "PathExists\08.PathExists.csproj", "{0C7270A5-4E7C-4E86-8D23-825B66A8A7C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09.LargestAreaOfEmptyCells", "LargestAreaOfEmptyCells\09.LargestAreaOfEmptyCells.csproj", "{F45A2E95-A529-449B-B143-EDCAB0A57003}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,18 @@ Global
 		{DF3F025B-5E77-474B-A311-823A7FEB303C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF3F025B-5E77-474B-A311-823A7FEB303C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF3F025B-5E77-474B-A311-823A7FEB303C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{581AED10-4A96-4A56-9DF8-8D06DA8D9ADF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{581AED10-4A96-4A56-9DF8-8D06DA8D9ADF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{581AED10-4A96-4A56-9DF8-8D06DA8D9ADF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{581AED10-4A96-4A56-9DF8-8D06DA8D9ADF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C7270A5-4E7C-4E86-8D23-825B66A8A7C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C7270A5-4E7C-4E86-8D23-825B66A8A7C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C7270A5-4E7C-4E86-8D23-825B66A8A7C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C7270A5-4E7C-4E86-8D23-825B66A8A7C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F45A2E95-A529-449B-B143-EDCAB0A57003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F45A2E95-A529-449B-B143-EDCAB0A57003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F45A2E95-A529-449B-B143-EDCAB0A57003}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F45A2E95-A529-449B-B143-EDCAB0A57003}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
