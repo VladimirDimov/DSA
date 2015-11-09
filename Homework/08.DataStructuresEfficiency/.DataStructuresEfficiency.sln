@@ -1,15 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.SortedDictionary", "SortedDictionary\01.SortedDictionary.csproj", "{9352FFAD-370F-4810-B1B7-BD17ADF87926}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.OrderedMultidictionary", "OrderedMultidictionary\02.OrderedMultidictionary.csproj", "{170272D1-E14C-4B3B-BE42-4714B5F70B04}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers", "Helpers\Helpers.csproj", "{30A4BD0F-873F-461C-9083-2F40FFD67D9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiDictionary", "BiDictionary\BiDictionary.csproj", "{5CEDC780-B56E-47E8-9543-267B57C515C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.BiDictionary", "BiDictionary\03.BiDictionary.csproj", "{5CEDC780-B56E-47E8-9543-267B57C515C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
