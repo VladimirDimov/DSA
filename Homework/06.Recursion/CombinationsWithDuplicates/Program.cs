@@ -1,4 +1,6 @@
-﻿namespace CombinationsWithDuplicates
+﻿//  Write a recursive program for generating and printing all the 
+//  combinations with duplicatesof k elements from n-element set. Example:
+namespace CombinationsWithDuplicates
 {
     using Services;
     using System;

@@ -55,7 +55,7 @@ namespace LargestAreaOfEmptyCells
                 }
             }
 
-            Console.WriteLine(maxNumberOfLinkedZeroes);
+            Console.WriteLine("Largest area of empty cells: {0}", maxNumberOfLinkedZeroes);
         }
 
         private static int GetLinkedZeroes(Position position, MatrixSet matrixSet, int counter = 0)

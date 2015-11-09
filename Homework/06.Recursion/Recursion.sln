@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08.PathExists", "PathExists
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09.LargestAreaOfEmptyCells", "LargestAreaOfEmptyCells\09.LargestAreaOfEmptyCells.csproj", "{F45A2E95-A529-449B-B143-EDCAB0A57003}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassableAndNonPassableCells", "PassableAndNonPassableCells\PassableAndNonPassableCells.csproj", "{7EC69227-1858-46C0-A3E2-1300DC04938B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{F45A2E95-A529-449B-B143-EDCAB0A57003}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F45A2E95-A529-449B-B143-EDCAB0A57003}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F45A2E95-A529-449B-B143-EDCAB0A57003}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EC69227-1858-46C0-A3E2-1300DC04938B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EC69227-1858-46C0-A3E2-1300DC04938B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EC69227-1858-46C0-A3E2-1300DC04938B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EC69227-1858-46C0-A3E2-1300DC04938B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

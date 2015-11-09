@@ -32,7 +32,7 @@
                 {'0','0','0','x','0','0'}
             };
 
-            var matrixC = CreateMatrix(100, 100);
+            var matrixC = CreateEmptyMatrix(50, 50);
 
             var matrix = matrixC; // Change the matrix
 
@@ -94,7 +94,7 @@
             return possibleDirections;
         }
 
-        private static char[,] CreateMatrix(int rows, int cols)
+        private static char[,] CreateEmptyMatrix(int rows, int cols)
         {
             var matrix = new char[rows, cols];
             for (int row = 0; row < rows; row++)

@@ -12,6 +12,12 @@
 
         static void Main()
         {
+            var startPosition = new Position(0, 0);
+            var targetPosition = new Position(5, 5);
+
+            Console.WriteLine("Start position: {0}", startPosition);
+            Console.WriteLine("Start position: {0}", targetPosition);
+
             var matrix = new char[6, 6]
             {
                 {'0','0','0','x','0','x'},
@@ -33,8 +39,9 @@
             };
 
             var labirynth = new Labyrinth(matrixReloaded);
-            var startPosition = new Position(0, 0);
-            var targetPosition = new Position(5, 5);
+
+            Console.WriteLine("Labyrinth:");
+            Console.WriteLine(labirynth);
 
             GetAllPaths(startPosition, targetPosition, labirynth);
 
