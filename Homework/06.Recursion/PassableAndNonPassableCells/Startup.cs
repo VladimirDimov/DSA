@@ -6,7 +6,7 @@ namespace PassableAndNonPassableCells
     {
         static void Main()
         {
-            var theMatrix = new char[,]
+            var matrixData = new char[,]
             {
                 {'p','p','n','n','n','n','n','n','n','n','n','n','n','n','n',},
                 {'p','p','n','n','n','n','n','n','n','n','n','n','n','n','n',},
@@ -28,8 +28,13 @@ namespace PassableAndNonPassableCells
                 {'n','n','n','n','n','n','n','n','n','n','n','n','n','n','n',},
                 {'n','n','n','n','n','n','n','n','n','n','n','n','n','n','n',}
             };
-            
 
+            var matrix = new Matrix(matrixData);
+
+            foreach (var area in matrix.PassableAreas)
+            {
+                System.Console.WriteLine("Passable area: {0}",area);
+            }
         }
     }
 }

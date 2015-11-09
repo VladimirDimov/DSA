@@ -4,7 +4,7 @@
 
     public class Permutations
     {
-        public static void Permute(int n, List<int> permutation, HashSet<int> passed, List<List<int>> result)
+        public static void PermuteWithRepetition(int n, List<int> permutation, HashSet<int> passed, List<List<int>> result)
         {
             if (permutation.Count == n)
             {
@@ -19,7 +19,7 @@
                     var currentPassed = new HashSet<int>(passed);
                     currentPermutation.Add(i);
                     currentPassed.Add(i);
-                    Permute(n, currentPermutation, currentPassed, result);
+                    PermuteWithRepetition(n, currentPermutation, currentPassed, result);
                 }
             }
         }

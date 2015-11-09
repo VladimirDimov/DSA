@@ -8,11 +8,17 @@
 
         public Area()
         {
+            this.positions = new List<Position>();
         }
 
         public void AddPosition(Position position)
         {
             this.positions.Add(position);
+        }
+
+        public override string ToString()
+        {
+            return string.Join(", ", this.positions);
         }
     }
 }

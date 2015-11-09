@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.AllPossibleCombinations", "AllPossibleCombinations\01.AllPossibleCombinations.csproj", "{2393B095-8BB2-45A4-8E4C-3AB902925B36}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.CombinationsWithDuplicates", "CombinationsWithDuplicates\02.CombinationsWithDuplicates.csproj", "{18F98017-D95E-41A3-A838-C11EDFB6786E}"
@@ -21,7 +23,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08.PathExists", "PathExists
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09.LargestAreaOfEmptyCells", "LargestAreaOfEmptyCells\09.LargestAreaOfEmptyCells.csproj", "{F45A2E95-A529-449B-B143-EDCAB0A57003}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassableAndNonPassableCells", "PassableAndNonPassableCells\PassableAndNonPassableCells.csproj", "{7EC69227-1858-46C0-A3E2-1300DC04938B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.PassableAndNonPassableCells", "PassableAndNonPassableCells\10.PassableAndNonPassableCells.csproj", "{7EC69227-1858-46C0-A3E2-1300DC04938B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.PermutationsWithRepetition", "PermutationsWithRepetition\11.PermutationsWithRepetition.csproj", "{F8AE460C-537B-4B1C-BC1C-4C18C2493F34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +77,10 @@ Global
 		{7EC69227-1858-46C0-A3E2-1300DC04938B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EC69227-1858-46C0-A3E2-1300DC04938B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EC69227-1858-46C0-A3E2-1300DC04938B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8AE460C-537B-4B1C-BC1C-4C18C2493F34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8AE460C-537B-4B1C-BC1C-4C18C2493F34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8AE460C-537B-4B1C-BC1C-4C18C2493F34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8AE460C-537B-4B1C-BC1C-4C18C2493F34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

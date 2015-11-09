@@ -15,7 +15,7 @@ namespace AllPermutations
             var n = int.Parse(Console.ReadLine());
 
             var result = new List<List<int>>();
-            Permutations.Permute(n, new List<int>(), new HashSet<int>(), result);
+            Permutations.PermuteWithRepetition(n, new List<int>(), new HashSet<int>(), result);
 
             ConsolePrinter.Print(result);
         }
