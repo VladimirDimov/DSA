@@ -4,8 +4,10 @@
     using System.IO;
     using System.Text.RegularExpressions;
 
-    class Program
+    class Startup
     {
+        private const int NumberOfSuggestions = 50;
+
         static void Main()
         {
             var reader = new StreamReader("../../input/bigtext.txt");
@@ -36,7 +38,7 @@
             {
                 Console.Write("Enter some pattern: ");
                 pattern = Console.ReadLine();
-                var matches = trie.Match(pattern, 20);
+                var matches = trie.Match(pattern, NumberOfSuggestions);
                 Console.WriteLine(string.Join(Environment.NewLine, matches));
             } while (pattern != string.Empty);
         }

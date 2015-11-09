@@ -10,7 +10,7 @@ namespace OrderedBag
     using System.Linq;
     using System;
 
-    class Program
+    class Startup
     {
         private const int NumberOfProducts = 500000;
         private const int NumberOfPriceSearches = 10000;
