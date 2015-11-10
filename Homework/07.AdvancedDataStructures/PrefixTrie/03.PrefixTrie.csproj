@@ -43,14 +43,18 @@
   <ItemGroup>
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Trie.Data\Node.cs" />
-    <Compile Include="Trie.Data\Trie.cs" />
+    <Compile Include="TrieData\ITrie.cs" />
+    <Compile Include="TrieData\Trie.cs" />
+    <Compile Include="TrieData\TrieFactory.cs" />
+    <Compile Include="TrieData\TrieNode.cs" />
+    <Compile Include="TrieData\Utilities.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="input\bigtext.txt" />
+    <Content Include="input\big-text.txt" />
+    <Content Include="input\small-text.txt" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
