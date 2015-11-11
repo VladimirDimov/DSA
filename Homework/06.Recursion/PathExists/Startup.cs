@@ -32,9 +32,9 @@
                 {'0','0','0','x','0','0'}
             };
 
-            var matrixC = CreateEmptyMatrix(50, 50);
+            var matrixC = CreateEmptyMatrix(92, 92);
 
-            var matrix = matrixC; // Change the matrix
+            var matrix = matrixB; // Change the matrix
 
             var labirynth = new Labyrinth(matrix);
             var startPosition = new Position(0, 0);
