@@ -5,15 +5,20 @@
 
     class Program
     {
-        static List<string[]> result = new List<string[]>();
-
         static void Main()
         {
-            string[] arr = { "apple", "banana", "orange" };
-            GeneratePermutations(arr, 0, result);
+            string[] arr = { "A", "B", "C" };
+
+            List<string[]> result = new List<string[]>();
+            GeneratePermutations(arr, result);
+
+            foreach (var item in result)
+            {
+                Console.WriteLine(string.Join(" ", item));
+            }
         }
 
-        static void GeneratePermutations<T>(T[] arr, int k, List<T[]> result)
+        static void GeneratePermutations<T>(T[] arr, List<T[]> result, int k = 0)
         {
             if (k >= arr.Length)
             {
@@ -23,11 +28,11 @@
             }
             else
             {
-                GeneratePermutations(arr, k + 1, result);
+                GeneratePermutations(arr, result, k + 1);
                 for (int i = k + 1; i < arr.Length; i++)
                 {
                     Swap(ref arr[k], ref arr[i]);
-                    GeneratePermutations(arr, k + 1, result);
+                    GeneratePermutations(arr, result, k + 1);
                     Swap(ref arr[k], ref arr[i]);
                 }
             }

@@ -6,35 +6,34 @@
 
     class Program
     {
-        const int n = 5;
-        const int k = 3;
-
-        static string[] objects = new string[n] { "banana", "apple", "orange", "strawberry", "raspberry" };
-        static int[] arr = new int[k];
-        static List<string[]> combinationsNoRepResult = new List<string[]>();
-
         static void Main()
         {
-            GenerateCombinationsNoRepetitions(0, 0, combinationsNoRepResult);
+            int n = 5;
+            int k = 3;
 
-            foreach (var item in combinationsNoRepResult)
+            string[] objects = new string[] { "A", "B", "C", "D", "E" };
+
+            List<string[]> result = new List<string[]>();
+            GenerateCombinationsNoRepetitions(objects, n, k, new int[k], result);
+
+            foreach (var item in result)
             {
                 Console.WriteLine(string.Join(" ", item));
             }
         }
 
-        static void GenerateCombinationsNoRepetitions(int index, int start, List<string[]> result)
+        static void GenerateCombinationsNoRepetitions(string[] objects, int n, int k, int[] currentIndexPositions, List<string[]> result, int index = 0, int start = 0)
         {
             if (index >= k)
             {
-                result.Add(arr.Select(x => objects[x]).ToArray());
+                result.Add(currentIndexPositions.Select(x => objects[x]).ToArray());
             }
             else
             {
                 for (int i = start; i < n; i++)
                 {
-                    arr[index] = i;
-                    GenerateCombinationsNoRepetitions(index + 1, i + 1, result);
+                    currentIndexPositions[index] = i;
+                    GenerateCombinationsNoRepetitions(objects, n, k, currentIndexPositions, result, index + 1, i + 1);
                 }
             }
         }

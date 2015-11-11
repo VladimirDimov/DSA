@@ -1,40 +1,39 @@
 ﻿namespace VariationsWithRepetitions
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
 
     class Program
     {
-        const int n = 10;
-        const int k = 3;
-
-
-        static int[] arr = new int[k];
-
         static void Main()
         {
-            string[] objects = new string[n] 
-			{
-				"banana", "apple", "orange", "strawberry", "raspberry",
-				"apricot", "cherry", "lemon", "grapes", "melon"
-			};
+            int n = 3;
+            int k = 2;
+
+            string[] objects = new string[] { "A", "B", "C" };
 
             List<string[]> result = new List<string[]>();
-            GenerateVariationsWithRepetitions(n, k, 0, objects, result);
+            GenerateVariationsWithRepetitions(n, k, objects, new int[k], result);
+
+            foreach (var combo in result)
+            {
+                Console.WriteLine(string.Join(" ", combo));
+            }
         }
 
-        static void GenerateVariationsWithRepetitions<T>(int n, int k, int index, T[] objects, List<T[]> result)
+        static void GenerateVariationsWithRepetitions<T>(int n, int k, T[] objects, int[] currentVariation, List<T[]> result, int index = 0)
         {
             if (index >= k)
             {
-                result.Add(arr.Select(x => objects[x]).ToArray());
+                result.Add(currentVariation.Select(x => objects[x]).ToArray());
             }
             else
             {
                 for (int i = 0; i < n; i++)
                 {
-                    arr[index] = i;
-                    GenerateVariationsWithRepetitions(n, k, index + 1, objects, result);
+                    currentVariation[index] = i;
+                    GenerateVariationsWithRepetitions(n, k, objects, currentVariation, result, index + 1);
                 }
             }
         }

@@ -6,14 +6,13 @@
 
     class Program
     {
-        private static List<int[]> result = new List<int[]>();
-
         static void Main()
         {
-            var arr = new int[] { 3, 5, 1, 5, 5 };
+            var arr = new int[] { 3, 5, 1, 5 };
             Array.Sort(arr);
 
-            PermuteRep(arr, 0, arr.Length, result);
+            List<int[]> result = new List<int[]>();
+            PermuteRep(arr, arr.Length, result);
 
             foreach (var item in result)
             {
@@ -21,10 +20,10 @@
             }
         }
 
-        static void PermuteRep<T>(T[] arr, int start, int n, List<T[]> result)
+        static void PermuteRep<T>(T[] arr, int n, List<T[]> result, int start = 0)
         {
-            var arrayToAdd = new T[arr.Length];
-            Array.Copy(arr, arrayToAdd, arr.Length);
+            var arrayToAdd = new T[n];
+            Array.Copy(arr, arrayToAdd, n);
             result.Add(arrayToAdd);
 
             for (int left = n - 2; left >= start; left--)
@@ -34,7 +33,7 @@
                     if (!arr[left].Equals(arr[right]))
                     {
                         Swap(ref arr[left], ref arr[right]);
-                        PermuteRep(arr, left + 1, n, result);
+                        PermuteRep(arr, n, result, left + 1);
                     }
                 }
 
@@ -47,11 +46,6 @@
                 }
                 arr[n - 1] = firstElement;
             }
-        }
-
-        static void Print<T>(T[] arr)
-        {
-            Console.WriteLine(string.Join(", ", arr));
         }
 
         static void Swap<T>(ref T first, ref T second)

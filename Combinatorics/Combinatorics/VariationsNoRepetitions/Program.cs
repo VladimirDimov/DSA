@@ -8,26 +8,29 @@ namespace VariationsNoRepetitions
 {
     class Program
     {
-        const int n = 10;
-        const int k = 3;
-        static string[] objects = new string[n] 
-	{
-		"banana", "apple", "orange", "strawberry", "raspberry",
-		"apricot", "cherry", "lemon", "grapes", "melon"
-	};
-        static int[] arr = new int[k];
-        static bool[] used = new bool[n];
 
         static void Main()
         {
-            GenerateVariationsNoRepetitions(0);
+            int n = 3;
+            int k = 2;
+
+            string[] objects = new string[] { "A", "B", "C" };
+            bool[] used = new bool[n];
+
+            var result = new List<string[]>();
+            GenerateVariationsNoRepetitions(objects, n, k, new int[k], new bool[n], result);
+
+            foreach (var item in result)
+            {
+                Console.WriteLine(string.Join(" ", item));
+            }
         }
 
-        static void GenerateVariationsNoRepetitions(int index)
+        static void GenerateVariationsNoRepetitions(string[] objects, int n, int k, int[] currentVariation, bool[] used, List<string[]> result, int index = 0)
         {
             if (index >= k)
             {
-                PrintVariations();
+                result.Add(currentVariation.Select(x => objects[x]).ToArray());
             }
             else
             {
@@ -36,22 +39,12 @@ namespace VariationsNoRepetitions
                     if (!used[i])
                     {
                         used[i] = true;
-                        arr[index] = i;
-                        GenerateVariationsNoRepetitions(index + 1);
+                        currentVariation[index] = i;
+                        GenerateVariationsNoRepetitions(objects, n, k, currentVariation, used, result, index + 1);
                         used[i] = false;
                     }
                 }
             }
-        }
-
-        static void PrintVariations()
-        {
-            Console.Write("(" + String.Join(", ", arr) + ") --> ( ");
-            for (int i = 0; i < arr.Length; i++)
-            {
-                Console.Write(objects[arr[i]] + " ");
-            }
-            Console.WriteLine(")");
         }
     }
 }
