@@ -52,7 +52,7 @@ namespace Services
             {
                 var currentCombination = new List<int>(combination);
                 currentCombination.Add(i);
-                GetAllCombinationsWithDuplicates(k, n, i+1, currentCombination, result);
+                GetAllCombinationsWithoutDuplicates(k, n, i + 1, currentCombination, result);
             }
         }
     }
