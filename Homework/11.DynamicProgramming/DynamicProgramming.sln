@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgoTaskOne", "AlgoTaskOne\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgoTaskTwo", "AlgoTaskTwo\AlgoTaskTwo.csproj", "{613E6910-0219-4EA6-B8B4-31BA2932CA3B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgoTaskSix", "AlgoTask3\AlgoTaskSix.csproj", "{3B47E7CA-A7A2-44FA-991A-8B64BF879A00}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{613E6910-0219-4EA6-B8B4-31BA2932CA3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{613E6910-0219-4EA6-B8B4-31BA2932CA3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{613E6910-0219-4EA6-B8B4-31BA2932CA3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B47E7CA-A7A2-44FA-991A-8B64BF879A00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B47E7CA-A7A2-44FA-991A-8B64BF879A00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B47E7CA-A7A2-44FA-991A-8B64BF879A00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B47E7CA-A7A2-44FA-991A-8B64BF879A00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
