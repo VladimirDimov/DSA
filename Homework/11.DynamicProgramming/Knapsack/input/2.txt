@@ -1,0 +1,5 @@
+﻿beer – weight=1, cost=1
+vodka – weight=3, cost=4
+cheese – weight=4, cost=5
+nuts – weight=5, cost=7
+weight = 7
