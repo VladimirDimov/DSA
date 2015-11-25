@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Knapsack", "Knapsack\Knapsa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimumEditDistance", "MinimumEditDistance\MinimumEditDistance.csproj", "{C1E12D52-4DBE-49DE-AA87-BCE1CF94E752}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgoTaskOne", "AlgoTaskOne\AlgoTaskOne.csproj", "{17BF428C-6C15-48AA-8DD1-19B525CC7FC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgoTaskTwo", "AlgoTaskTwo\AlgoTaskTwo.csproj", "{613E6910-0219-4EA6-B8B4-31BA2932CA3B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{C1E12D52-4DBE-49DE-AA87-BCE1CF94E752}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1E12D52-4DBE-49DE-AA87-BCE1CF94E752}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1E12D52-4DBE-49DE-AA87-BCE1CF94E752}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17BF428C-6C15-48AA-8DD1-19B525CC7FC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17BF428C-6C15-48AA-8DD1-19B525CC7FC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17BF428C-6C15-48AA-8DD1-19B525CC7FC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17BF428C-6C15-48AA-8DD1-19B525CC7FC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{613E6910-0219-4EA6-B8B4-31BA2932CA3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{613E6910-0219-4EA6-B8B4-31BA2932CA3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{613E6910-0219-4EA6-B8B4-31BA2932CA3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{613E6910-0219-4EA6-B8B4-31BA2932CA3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
