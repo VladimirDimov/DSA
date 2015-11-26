@@ -11,8 +11,8 @@
     {
         static void Main()
         {
-            //var reader = new StreamReader("../../input/2.txt");
-            //Console.SetIn(reader);
+            var reader = new StreamReader("../../input/2.txt");
+            Console.SetIn(reader);
 
             var firstInputLineParams = Console.ReadLine()
                 .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
@@ -73,7 +73,7 @@
                     .Where(x => !hospitals.Contains(x.Key))
                     .Sum(x => x.Value);
 
-                if (minDist < dist)
+                if (minDist > dist)
                 {
                     minDist = dist;
                 }
