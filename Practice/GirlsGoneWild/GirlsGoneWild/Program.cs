@@ -1,136 +1,161 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GirlsGoneWild
+﻿namespace GirlsGoneWild
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     class Program
     {
         static void Main()
         {
-            //Console.SetIn(new StreamReader("../../input/test.004.in.txt"));
+            //var reader = new StreamReader("../../input/1.txt");
+            //Console.SetIn(reader);
 
-            var shirtsNumber = int.Parse(Console.ReadLine());
-            var skirts = Console.ReadLine();
-            var girlsNumber = int.Parse(Console.ReadLine());
+            var numberOfShirts = int.Parse(Console.ReadLine());
+            var scirts = Console.ReadLine().ToCharArray().OrderBy(x => x).ToArray();
+            int girlsNumber = int.Parse(Console.ReadLine());
 
-            var skirtsVariations = new List<List<char>>();
-            CombinateSkirts<char>(girlsNumber, skirts.ToCharArray().ToList(), new List<char>(), skirtsVariations);
-
-            var shirtsVariations = new List<List<int>>();
-            CombinateSkirts(girlsNumber, shirtsNumber, new List<int>(), shirtsVariations);
-
-            var charsAndInts = CombinateTwoLists(skirtsVariations, shirtsVariations);
-
-            var result = new List<SortedSet<string>>();
-            foreach (var values in charsAndInts)
+            if (numberOfShirts < girlsNumber || scirts.Length < girlsNumber)
             {
-                CombinateBetweenGirls(values, new SortedSet<string>(), result, new HashSet<int>(), new HashSet<int>());
-            }
-
-            var output = new SortedSet<string>();
-
-            foreach (var item in result)
-            {
-                output.Add(string.Join("-", item));
-            }
-
-            //Console.WriteLine(string.Join(Environment.NewLine, result.Select(x => string.Join("", x))));
-
-            Console.WriteLine(output.Count);
-            Console.WriteLine(string.Join(Environment.NewLine, output));
-        }
-
-        public static void CombinateSkirts<T>(int k, List<T> set, List<T> combination, List<List<T>> result, int left = 0)
-        {
-            if (combination.Count == k)
-            {
-                result.Add(combination);
+                Console.WriteLine(0);
                 return;
             }
 
-            for (int i = left; i < set.Count; i++)
-            {
-                var currentCombination = new List<T>(combination);
-                currentCombination.Add(set[i]);
-                CombinateSkirts(k, set, currentCombination, result, i + 1);
-            }
-        }
+            int[] shirts = new int[numberOfShirts];
 
-        public static void CombinateSkirts(int k, int sequenceLength, List<int> combination, List<List<int>> result, int left = 0)
-        {
-            if (combination.Count == k)
+            for (int i = 0; i < numberOfShirts; i++)
             {
-                result.Add(combination);
-                return;
+                shirts[i] = i;
             }
 
-            for (int i = left; i < sequenceLength; i++)
-            {
-                var currentCombination = new List<int>(combination);
-                currentCombination.Add(i);
-                CombinateSkirts(k, sequenceLength, currentCombination, result, i + 1);
-            }
-        }
+            int n = numberOfShirts;
+            var shirtsCombinations = new List<int[]>();
+            GenerateCombinationsNoRepetitions(shirts, n, girlsNumber, new int[girlsNumber], shirtsCombinations);
 
-        static void CombinateBetweenGirls(string[] values, SortedSet<string> currentCombo, List<SortedSet<string>> result, HashSet<int> passedIndexesI, HashSet<int> passedIndexesJ, int leftI = 0)
-        {
-            var girlsNumber = values[0].Length;
+            var scirtsCombinations = new List<char[]>();
+            GenerateCombinationsOfScirts(scirts, scirts.Length, girlsNumber, new int[girlsNumber], scirtsCombinations);
 
-            if (currentCombo.Count == girlsNumber)
+            var toPrint = new SortedSet<string>();
+            for (int sh = 0; sh < shirtsCombinations.Count; sh++)
             {
-                result.Add(currentCombo);
-                return;
-            }
-
-            for (int i = 0; i < girlsNumber; i++)
-            {
-                if (passedIndexesI.Contains(i))
+                for (int sc = 0; sc < scirtsCombinations.Count; sc++)
                 {
-                    continue;
+                    CombinateBetweenGirls(shirtsCombinations[sh], scirtsCombinations[sc], toPrint);
                 }
+            }
 
-                for (int j = i; j < girlsNumber; j++)
+            Console.WriteLine(toPrint.Count);
+            Console.WriteLine(string.Join(Environment.NewLine, toPrint));
+        }
+
+        /*shirts - 0, 1...*/
+        private static void CombinateBetweenGirls(int[] shirts, char[] scirts, SortedSet<string> toPrint)
+        {
+            var scirtsPermutations = new List<char[]>();
+            PermuteRep(scirts, scirts.Length, scirtsPermutations);
+
+            foreach (var permutation in scirtsPermutations)
+            {
+                var currentSolution = new string[shirts.Length];
+                for (int i = 0; i < shirts.Length; i++)
                 {
-                    if (passedIndexesJ.Contains(j))
+                    currentSolution[i] = string.Format("{0}{1}", shirts[i], permutation[i]);
+                }
+                toPrint.Add(string.Join("-", currentSolution));
+            }
+        }
+
+        static void GenerateCombinationsNoRepetitions(int[] objects, int n, int k, int[] currentIndexPositions, List<int[]> result, int index = 0, int start = 0)
+        {
+            if (index >= k)
+            {
+                result.Add(currentIndexPositions.Select(x => objects[x]).ToArray());
+            }
+            else
+            {
+                for (int i = start; i < n; i++)
+                {
+                    currentIndexPositions[index] = i;
+                    GenerateCombinationsNoRepetitions(objects, n, k, currentIndexPositions, result, index + 1, i + 1);
+                }
+            }
+        }
+
+        static void GenerateCombinationsOfScirts(char[] objects, int n, int k, int[] currentIndexPositions, List<char[]> result, int index = 0, int start = 0)
+        {
+            if (index >= k)
+            {
+                var currentCombination = currentIndexPositions.Select(x => objects[x]).ToArray();
+                if (result.Count == 0 || !AreEqualArrays(currentCombination, result[result.Count - 1]))
+                {
+                    result.Add(currentCombination);
+                }
+            }
+            else
+            {
+                var lastObj = '#';
+                for (int i = start; i < n; i++)
+                {
+                    var currentObj = objects[i];
+
+                    if (currentObj == lastObj)
                     {
                         continue;
                     }
 
-                    var newPassedIndexesI = new HashSet<int>(passedIndexesI);
-                    var newPassedIndexesJ = new HashSet<int>(passedIndexesJ);
-                    newPassedIndexesI.Add(i);
-                    newPassedIndexesJ.Add(j);
-
-                    var newCombo = new SortedSet<string>(currentCombo);
-                    newCombo.Add(values[1][j].ToString() + values[0][i].ToString());
-                    
-                    CombinateBetweenGirls(
-                        values,
-                        newCombo,
-                        result,
-                        newPassedIndexesI,
-                        newPassedIndexesJ);
+                    lastObj = currentObj;
+                    currentIndexPositions[index] = i;
+                    GenerateCombinationsOfScirts(objects, n, k, currentIndexPositions, result, index + 1, i + 1);
                 }
             }
         }
 
-        static List<string[]> CombinateTwoLists(List<List<char>> chars, List<List<int>> ints)
+        static bool AreEqualArrays<T>(T[] arr1, T[] arr2)
         {
-            var result = new List<string[]>();
-
-            for (int i = 0; i < chars.Count; i++)
+            for (int i = 0; i < arr1.Length; i++)
             {
-                for (int j = 0; j < ints.Count; j++)
+                if (!arr1[i].Equals(arr2[i]))
                 {
-                    result.Add(new string[] { string.Join("", chars[i]), string.Join("", ints[j]) });
+                    return false;
                 }
             }
 
-            return result;
+            return true;
+        }
+
+        static void PermuteRep<T>(T[] inputArray, int n, List<T[]> result, int start = 0)
+        {
+            var arrayToAdd = new T[n];
+            Array.Copy(inputArray, arrayToAdd, n);
+            result.Add(arrayToAdd);
+
+            for (int left = n - 2; left >= start; left--)
+            {
+                for (int right = left + 1; right < n; right++)
+                {
+                    if (!inputArray[left].Equals(inputArray[right]))
+                    {
+                        Swap(ref inputArray[left], ref inputArray[right]);
+                        PermuteRep(inputArray, n, result, left + 1);
+                    }
+                }
+
+                // Undo all modifications done by the
+                // previous recursive calls and swaps
+                var firstElement = inputArray[left];
+                for (int i = left; i < n - 1; i++)
+                {
+                    inputArray[i] = inputArray[i + 1];
+                }
+                inputArray[n - 1] = firstElement;
+            }
+        }
+
+        static void Swap<T>(ref T first, ref T second)
+        {
+            T oldFirst = first;
+            first = second;
+            second = oldFirst;
         }
     }
 }
