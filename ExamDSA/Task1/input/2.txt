@@ -1,0 +1,16 @@
+﻿add Unit2 Type1 100
+   add    Unit1   Type1    100  
+add Unit4 Type1 100
+add Unit3 Type1 100
+add Unit6 Type2 100
+add Unit5 Type2 100
+add Unit8 Type2 100
+add Unit9 Type2 100
+add Unit10 Type3 100
+add Unit7 Type2 100
+remove Unit1
+remove Unit5
+    power  4
+  find  Type2
+  find Type4
+end

@@ -1,0 +1,9 @@
+﻿8
+AddProduct IdeaPad Z560;1536.50;Lenovo
+AddProduct ThinkPad T410;3000;Lenovo
+AddProduct VAIO Z13;4099.99;Sony
+DeleteProducts ThinkPad T410;Lenovo
+DeleteProducts Lenovo
+FindProductsByName ThinkPad T410
+FindProductsByName VAIO Z13
+FindProductsByProducer Lenovo

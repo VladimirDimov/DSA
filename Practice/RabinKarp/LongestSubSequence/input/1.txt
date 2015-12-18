@@ -1,0 +1,4 @@
+﻿adfdafasdfhfjghkgkhk;jk;jkl;jkl;jkl;
+fhfjghkgkhk;jk
+
+Output: 7
